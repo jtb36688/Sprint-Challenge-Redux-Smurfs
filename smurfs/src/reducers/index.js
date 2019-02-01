@@ -12,6 +12,7 @@ import {
   DELETE_SMURF_SUCCESS,
   DELETE_SMURF_FAILURE
 } from "../actions/";
+import { start } from "repl";
 
 const initialState = {
   smurfs: [],
@@ -26,19 +27,27 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_SMURFS_SUCCESS:
       return {
-
+        ...state,
+        fetchingSmurfs: false,
+        smurfs: action.payload,
+        updateId: ''
       };
     case ADD_SMURF_SUCCESS:
       return {
-
+        ...state,
+        addingSmurf: false,
+        smurfs: action.payload
       };
     case UPDATE_SMURF_SUCCESS:
       return {
-
+        ...state,
+        smurfs: action.payload
       };
     case DELETE_SMURF_SUCCESS:
       return {
-
+        ...start,
+        deletingSmurf: false,
+        smurfs: action.payload
       };
     default:
       return state;
