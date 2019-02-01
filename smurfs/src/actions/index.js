@@ -35,7 +35,6 @@ export const getSmurfs = () => dispatch => {
 }
 
 export const updateSmurf = (data, id) => dispatch => {
-  console.log(data, id)
   dispatch({ type: UPDATE_SMURF_START });
   axios
   .put(`http://localhost:3333/smurfs/${id}`, data)
@@ -44,7 +43,6 @@ export const updateSmurf = (data, id) => dispatch => {
 }
 
 export const deleteSmurf = (id) => dispatch => {
-  console.log(id)
   dispatch({ type: DELETE_SMURF_START });
   axios
   .delete(`http://localhost:3333/smurfs/${id}`)

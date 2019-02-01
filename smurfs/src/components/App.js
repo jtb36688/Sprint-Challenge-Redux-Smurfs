@@ -9,7 +9,6 @@ import { getSmurfs, addSmurf, updateSmurf, deleteSmurf, setUpdate } from "../act
 
 class App extends Component {
   routeUpdate = id => {
-    console.log('smurf id', id)
     this.props.setUpdate(`${id}`);
     this.props.history.push("/SmurfFactory/");
   };
