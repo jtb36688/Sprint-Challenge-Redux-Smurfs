@@ -35,6 +35,7 @@ export const getSmurfs = () => dispatch => {
 }
 
 export const updateSmurf = (data, id) => dispatch => {
+  console.log(data, id)
   dispatch({ type: UPDATE_SMURF_START });
   axios
   .put(`http://localhost:3333/smurfs/${id}`, data)

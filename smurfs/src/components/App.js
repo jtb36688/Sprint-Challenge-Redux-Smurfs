@@ -10,7 +10,7 @@ import { getSmurfs, addSmurf, updateSmurf, deleteSmurf, setUpdate } from "../act
 class App extends Component {
   routeUpdate = id => {
     console.log('smurf id', id)
-    this.props.setUpdate(id);
+    this.props.setUpdate(`${id}`);
     this.props.history.push("/SmurfFactory/");
   };
 
@@ -46,7 +46,7 @@ class App extends Component {
                 smurfs={this.props.smurfs}
                 smurfupdating={this.props.smurfupdating}
                 addSmurf={this.props.addSmurf}
-                updateSmurf={this.props.addSmurf}
+                updateSmurf={this.props.updateSmurf}
               />
               <Link to="/">Return To Smurf Village</Link>
             </div>

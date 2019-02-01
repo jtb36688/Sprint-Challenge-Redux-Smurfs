@@ -36,7 +36,7 @@ class SmurfForm extends Component {
   handleSubmit = (e, data, id) => {
     e.preventDefault();
     if (!Object.values(this.state.newSmurf).includes("")) {
-      if (this.props.smurfupdating) {
+      if (id) {
         this.props.updateSmurf(data, id);
         this.props.history.push("/");
       } else {

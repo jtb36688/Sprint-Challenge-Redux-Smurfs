@@ -4,7 +4,7 @@ const Smurf = props => {
   return (
     <div className="Smurf">
       <h3>{props.name}</h3>
-      <strong>{props.height} tall</strong>
+      <strong>{props.height} millimeters tall</strong>
       <p>{props.age} smurf years old</p>
       <div className="MappedButtons">
       <button onClick={() => props.deleteSmurf(props.id)}>Banish</button>
