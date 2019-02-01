@@ -8,16 +8,11 @@ const Smurf = props => {
       <p>{props.age} smurf years old</p>
       <div className="MappedButtons">
       <button onClick={() => props.deleteSmurf(props.id)}>Banish</button>
-      <button onClick={() => props.modifySmurf(props.id)}>Transform</button>
+      <button onClick={() => props.updateSmurf(props.id)}>Transform</button>
       </div>
     </div>
   );
 };
 
-Smurf.defaultProps = {
-  name: '',
-  height: '',
-  age: ''
-};
 
 export default Smurf;

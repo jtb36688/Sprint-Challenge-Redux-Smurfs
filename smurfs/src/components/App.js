@@ -5,39 +5,13 @@ import Loader from "react-loader-spinner";
 import SmurfForm from "./SmurfForm";
 import Smurfs from "./Smurfs";
 import { Route, NavLink, Link } from "react-router-dom";
-import { getSmurfs, addSmurf, updateSmurf, deleteSmurf } from "../actions/";
-
-const apiurl = `http://localhost:3333/smurfs`;
+import { getSmurfs, addSmurf, updateSmurf, deleteSmurf, setUpdate } from "../actions/";
 
 class App extends Component {
-  // componentDidMount() {
-  //   axios
-  //     .get(`${apiurl}`)
-  //     .then(res => {
-  //       this.setState({ smurfs: res.data });
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }
-
-  // deleteSmurf = id => {
-  //   axios
-  //   .delete(`${apiurl}/${id}/`)
-  //   .then(res => {
-  //     this.setState({
-  //       smurfs: res.data
-  //     });
-  //   })
-  //   .catch(err => console.log(err));
-  // }
-
-  // modifySmurf = id => {
-  //   this.setState({
-  //      smurfupdating: `${id}`
-  //   })
-  //   this.props.history.push("/SmurfFactory");
-  // }
+  routeUpdate = id => {
+    this.props.setUpdate(id);
+    this.props.history.push("/SmurfFactory/");
+  };
 
   render() {
     return (
@@ -55,7 +29,7 @@ class App extends Component {
                 {...props}
                 getSmurfs={this.props.getSmurfs}
                 deleteSmurf={this.props.deleteSmurf}
-                modifySmurf={this.props.updateSmurf}
+                routeUpdate={this.routeUpdate}
                 smurfs={this.props.smurfs}
               />
               <Link to="/SmurfFactory">Add New Smurf...</Link>
@@ -70,6 +44,8 @@ class App extends Component {
                 {...props}
                 smurfs={this.props.smurfs}
                 smurfupdating={this.props.smurfupdating}
+                addSmurf={this.props.addSmurf}
+                updateSmurf={this.props.addSmurf}
               />
               <Link to="/">Return To Smurf Village</Link>
             </div>
@@ -87,5 +63,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getSmurfs, addSmurf, updateSmurf, deleteSmurf }
+  { getSmurfs, addSmurf, updateSmurf, deleteSmurf, setUpdate }
 )(App);

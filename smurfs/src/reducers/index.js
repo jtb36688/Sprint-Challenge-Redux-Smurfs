@@ -1,4 +1,5 @@
 import {
+  SET_UPDATE,
   GET_SMURFS_START,
   GET_SMURFS_SUCCESS,
   GET_SMURFS_FAILURE,
@@ -12,7 +13,6 @@ import {
   DELETE_SMURF_SUCCESS,
   DELETE_SMURF_FAILURE
 } from "../actions/";
-import { start } from "repl";
 
 const initialState = {
   smurfs: [],
@@ -45,11 +45,18 @@ const reducer = (state = initialState, action) => {
       };
     case DELETE_SMURF_SUCCESS:
       return {
-        ...start,
+        ...state,
         deletingSmurf: false,
         smurfs: action.payload
       };
+    case SET_UPDATE:
+      return {
+        ...state,
+        updateId: action.payload
+      }
     default:
       return state;
   }
 };
+
+export default reducer
