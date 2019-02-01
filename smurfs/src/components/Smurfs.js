@@ -14,12 +14,13 @@ class Smurfs extends React.Component {
           {this.props.smurfs.map(smurf => {
             return (
               <Smurf
-                updateSmurf={this.props.updateSmurf}
+                routeUpdate={this.props.routeUpdate}
                 deleteSmurf={this.props.deleteSmurf}
                 name={smurf.name}
                 age={smurf.age}
                 height={smurf.height}
                 key={smurf.id}
+                id={smurf.id}
               />
             );
           })}

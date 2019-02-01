@@ -8,7 +8,7 @@ const Smurf = props => {
       <p>{props.age} smurf years old</p>
       <div className="MappedButtons">
       <button onClick={() => props.deleteSmurf(props.id)}>Banish</button>
-      <button onClick={() => props.updateSmurf(props.id)}>Transform</button>
+      <button onClick={() => props.routeUpdate(props.id)}>Transform</button>
       </div>
     </div>
   );
