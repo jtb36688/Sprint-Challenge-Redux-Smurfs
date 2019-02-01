@@ -29,7 +29,7 @@ class SmurfForm extends Component {
     })
   }
 
-  addSmurf = e => {
+  submitHandler = e => {
     e.preventDefault();
     axios
       .post(apiurl, this.state)
@@ -43,7 +43,7 @@ class SmurfForm extends Component {
       .catch(err => {
         console.log(err);
       });
-      this.props.updateAppState()
+      this.props.addSmurf
   };
 
   updateSmurf = e => {

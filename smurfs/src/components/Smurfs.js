@@ -4,7 +4,7 @@ import Smurf from "./Smurf";
 
 class Smurfs extends React.Component {
   componentDidMount = () => {
-    this.props.clearUpdating();
+    this.props.getSmurfs;
   };
   render() {
     return (
